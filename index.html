@@ -42,20 +42,20 @@
                 <form>
                     <fieldset>
                       <div class="mb-3">
-                        <label for="inputName" class="form-label">Nome</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                        <label for="input-name" class="form-label">Nome</label>
+                        <input type="text" id="input-name" class="form-control" placeholder="">
                       </div>
                       <div class="mb-3">
-                        <label for="inputSurname" class="form-label">Cognome</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                        <label for="input-surname" class="form-label">Cognome</label>
+                        <input type="text" id="input-surname" class="form-control" placeholder="">
                       </div>
                       <div class="mb-3">
                         <label for="inputEmail" class="form-label">Email</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                        <input type="email" id="inputEmail" class="form-control" placeholder="">
                       </div>
                       <div class="mb-3">
-                        <label for="inputWork" class="form-label">Tipo di lavoro</label>
-                        <select id="selectionWork" class="form-select">
+                        <label for="work-selection" class="form-label">Tipo di lavoro</label>
+                        <select id="work-selection" class="form-select">
                           <option>Seleziona tipo di lavoro</option>  
                           <option>Backend Development</option>
                           <option>Frontend Development</option>
@@ -69,8 +69,8 @@
                         <textarea class="form-control" aria-label="With textarea"></textarea>
                       </div>
                       <div class="mb-3">
-                        <label for="promoCode" class="form-label">Codice Promozionale (opzionale)</label>
-                        <input type="text" id="promoCode" class="form-control" placeholder="">
+                        <label for="promo-code" class="form-label">Codice Promozionale (opzionale)</label>
+                        <input type="text" id="promo-code" class="form-control" placeholder="">
                       </div>
                       <div class="mb-3">
                         <div class="form-check">
@@ -83,12 +83,12 @@
                     <div class="container text-center my-5 grid gap-3">
                         <div class="row">
                             <div class="p-2 g-col-6 col-sm-6">
-                                <button type="submit" class="btn btn-primary" id="formButton">Calcola Preventivo</button>
+                                <button type="submit" class="btn btn-primary" id="form-button">Calcola Preventivo</button>
                             </div>
-                            <div class="p-2 g-col-6 col-sm-6">
-                                <h5 class="fw-bold" id="finalPriceTitle">Prezzo finale</h5>
-                                <p class="fs-4 fw-bold d-inline-block" id="finalPriceBefore"></p>
-                                <p class="fs-5 fw-light d-inline-block" id="finalPriceAfter"></p>
+                            <div id="show-price" class="p-2 g-col-6 col-sm-6 d-none">
+                                <h5 class="fw-bold" id="final-price-title">Prezzo finale</h5>
+                                <p class="fs-4 fw-bold d-inline-block" id="final-price-before"></p>
+                                <p class="fs-5 fw-light d-inline-block" id="final-price-after"></p>
                             </div>
                         </div>
                     </div>
