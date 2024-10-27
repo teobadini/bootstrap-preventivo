@@ -69,13 +69,13 @@
                         <textarea class="form-control" aria-label="With textarea"></textarea>
                       </div>
                       <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Codice Promozionale (opzionale)</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                        <label for="promoCode" class="form-label">Codice Promozionale (opzionale)</label>
+                        <input type="text" id="promoCode" class="form-control" placeholder="">
                       </div>
                       <div class="mb-3">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
-                          <label class="form-check-label" for="disabledFieldsetCheck">
+                          <input class="form-check-input" type="checkbox" id="privacyCheck">
+                          <label class="form-check-label" for="privacyCheck">
                             Accetto la privacy policy
                           </label>
                         </div>
@@ -83,12 +83,12 @@
                     <div class="container text-center my-5 grid gap-3">
                         <div class="row">
                             <div class="p-2 g-col-6 col-sm-6">
-                                <button type="submit" class="btn btn-primary">Calcola Preventivo</button>
+                                <button type="submit" class="btn btn-primary" id="formButton">Calcola Preventivo</button>
                             </div>
                             <div class="p-2 g-col-6 col-sm-6">
-                                <h5 class="fw-bold">Prezzo finale</h5>
-                                <p class="fs-4 fw-bold d-inline-block">€200</p>
-                                <p class="fs-5 fw-light d-inline-block">,00</p>
+                                <h5 class="fw-bold" id="finalPriceTitle">Prezzo finale</h5>
+                                <p class="fs-4 fw-bold d-inline-block" id="finalPriceBefore"></p>
+                                <p class="fs-5 fw-light d-inline-block" id="finalPriceAfter"></p>
                             </div>
                         </div>
                     </div>
