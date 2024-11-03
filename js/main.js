@@ -1,9 +1,10 @@
 //informazioni lette dal dom
-const workSelection = document.getElementById("work-selection");
+const workSelection = document.getElementById('work-selection');
 const finalPriceBefore = document.getElementById ('final-price-before');
 const finalPriceAfter = document.getElementById ('final-price-after');
 const promoCode = document.getElementById ('promo-code');
 const showPrice = document.getElementById ('show-price');
+const promoCodes = ["YHDNU32","JANJC63","PWKCN25","SJDPO96","POCIE24"]
 
 const button = document.getElementById ('form-button');
 
@@ -36,12 +37,19 @@ button.addEventListener("click", function (event) {
     }
 
     console.log(price)
-    finalPriceBefore.innerText = price;
-    showPrice.classList.remove('d-none');
 
     //controllo codici sconto
 
+    if (promoCodes.includes(promoCode.value))
+        price = price - ((price * 25) / 100);
+    else
+        console.log("wrong");
 
+    // risultato
+
+    console.log(price);
+    finalPriceBefore.innerText = price;
+    showPrice.classList.remove('d-none');
 
 })
 
