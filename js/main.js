@@ -42,11 +42,11 @@ button.addEventListener("click", function (event) {
 
     //controllo codici sconto
 
-    if (promoCodes.includes(promoCode.value))
+    if (promoCodes.includes(promoCode.value)){
         price = price - ((price * 25) / 100);
-    else
+    } else {
         console.log("codice sconto non riconosciuto");
-        promoInputErr.textContent = 'Codice sconto non valido!'
+        promoInputErr.textContent = 'Codice sconto non valido!'}
 
     // Separazione del prezzo
 
@@ -68,7 +68,6 @@ button.addEventListener("click", function (event) {
     showPrice.classList.remove('d-none');
 
 })
-
 
 
 // variabili utili per il calcolo del prezzo
