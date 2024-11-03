@@ -4,6 +4,8 @@ const finalPriceBefore = document.getElementById ('final-price-before');
 const finalPriceAfter = document.getElementById ('final-price-after');
 const promoCode = document.getElementById ('promo-code');
 const showPrice = document.getElementById ('show-price');
+const workSelectionErr = document.getElementById ('work-selection-error')
+const promoInputErr = document.getElementById ('promo-input-error')
 const promoCodes = ["YHDNU32","JANJC63","PWKCN25","SJDPO96","POCIE24"]
 
 const button = document.getElementById ('form-button');
@@ -19,7 +21,7 @@ button.addEventListener("click", function (event) {
 
     const index = workSelection.selectedIndex;
 
-    let price = ""
+    let price = ''+'';
 
     if (index === 1) {
         console.log('Selezionato backend')
@@ -33,7 +35,7 @@ button.addEventListener("click", function (event) {
     }
     else {
         console.log('Nessuna selezione')
-        alert('Tipo di lavoro non selezionato!')
+        workSelectionErr.textContent = 'Tipo di lavoro non selezionato!'
     }
 
     console.log(price)
@@ -43,15 +45,31 @@ button.addEventListener("click", function (event) {
     if (promoCodes.includes(promoCode.value))
         price = price - ((price * 25) / 100);
     else
-        console.log("wrong");
+        console.log("codice sconto non riconosciuto");
+        promoInputErr.textContent = 'Codice sconto non valido!'
 
-    // risultato
+    // Separazione del prezzo
 
+    let priceStr = price.toString();
     console.log(price);
-    finalPriceBefore.innerText = price;
+    const pricePart = priceStr.split(".");
+
+    // Non mostrare la virgola se non ci sono decimali
+
+    if (pricePart[1]>0) {
+        finalPriceAfter.classList.remove('d-none');
+    }
+
+    // Inserimento delle parti del prezzo negli elementi
+
+    finalPriceBefore.textContent = pricePart[0];
+    finalPriceAfter.textContent = pricePart[1];
+
     showPrice.classList.remove('d-none');
 
 })
+
+
 
 // variabili utili per il calcolo del prezzo
 const timeCount = 10;

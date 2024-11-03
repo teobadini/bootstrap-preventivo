@@ -1,8 +1,6 @@
 #final-price-before:before {
     content: '€';
 }
-#final-price-before:after {
-    content: ',00';
-    font-weight: 300;
-    font-size: 1rem;
+#final-price-after:before {
+    content: ',';
 }

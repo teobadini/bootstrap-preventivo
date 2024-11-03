@@ -61,6 +61,7 @@
                           <option value="frontendDevelopment">Frontend Development</option>
                           <option value="projectAnalysis">Project Analysis</option>
                         </select>
+                        <p class="mt-2 text-danger" id="work-selection-error"></p>
                       </div>
                       <div class="mb-3">
                         <p>Descrivi la tua richiesta</p>
@@ -71,10 +72,11 @@
                       <div class="mb-3">
                         <label for="promo-code" class="form-label">Codice Promozionale (opzionale)</label>
                         <input type="text" id="promo-code" class="form-control" placeholder="">
+                        <p class="mt-2 text-danger" id="promo-input-error"></p>
                       </div>
                       <div class="mb-3">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="privacyCheck">
+                          <input class="form-check-input" type="checkbox" id="privacyCheck" required>
                           <label class="form-check-label" for="privacyCheck">
                             Accetto la privacy policy
                           </label>
@@ -88,7 +90,7 @@
                             <div id="show-price" class="p-2 g-col-6 col-sm-6 d-none">
                                 <h5 class="fw-bold" id="final-price-title">Prezzo finale</h5>
                                 <p class="fs-4 fw-bold d-inline-block" id="final-price-before"></p>
-                                <p class="fs-5 fw-light d-inline-block" id="final-price-after"></p>
+                                <p class="fs-5 fw-light d-inline-block d-none" id="final-price-after"></p>
                             </div>
                         </div>
                     </div>
