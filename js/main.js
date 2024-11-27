@@ -2,7 +2,7 @@
 const workSelection = document.getElementById('work-selection');
 const finalPriceBefore = document.getElementById ('final-price-before');
 const finalPriceAfter = document.getElementById ('final-price-after');
-const promoCode = document.getElementById ('promo-code');
+const promoCode = document.getElementById('promo-code');
 const showPrice = document.getElementById ('show-price');
 const workSelectionErr = document.getElementById ('work-selection-error')
 const promoInputErr = document.getElementById ('promo-input-error')
@@ -42,11 +42,17 @@ button.addEventListener("click", function (event) {
 
     //controllo codici sconto
 
-    if (promoCodes.includes(promoCode.value)){
+    if (promoCode.value === '') {
+        console.log('nessun codice inserito');
+        promoInputErr.textContent = '';
+    } else if (promoCodes.includes(promoCode.value)) {
         price = price - ((price * 25) / 100);
+        console.log('codice valido');
+        promoInputErr.textContent = '';
     } else {
-        console.log("codice sconto non riconosciuto");
-        promoInputErr.textContent = 'Codice sconto non valido!'}
+        console.log('codice sconto non riconosciuto');
+        promoInputErr.textContent = 'Codice sconto non valido!';
+    }
 
     // Separazione del prezzo
 
